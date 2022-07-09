@@ -7,7 +7,6 @@
 
 function printFullName(arrayOfNames) {
   // Your code here
-  return `${arrayOfNames[0]} ${arrayOfNames[1]}`;
 }
 
 let names = ['Jonas', 'Rogers'];
@@ -21,9 +20,7 @@ console.log('==>> 1. Your full name is: ', printFullName(names));
  */
 
 function printFullNameFromArrayOfArrays(arrayOfArrays) {
-  return arrayOfArrays.map((array) => {
-    return `${array[0]} ${array[1]}`;
-  });
+  // Your code here
 }
 
 let peopleNames = [
@@ -45,7 +42,7 @@ console.log(
  */
 
 function countSpecificCharacter(string, character) {
-  return string.match(new RegExp(character, 'gi')).length;
+  // Your code here
 }
 console.log(
   '==>> 3. count of `u` character in `Without functions, we fucked up!`  is: ',
@@ -60,7 +57,7 @@ console.log(
  */
 
 function getRandomItemFromArray(arr) {
-  return arr[Math.floor(Math.random() * arr.length)];
+  // Your code here
 }
 console.log(
   '==>> 4. Return random item is: ',
@@ -75,7 +72,7 @@ console.log(
  */
 
 function shuffleMyArray(arr) {
-  return arr.sort(() => Math.random() - 0.5);
+  // Your code here
 }
 console.log(
   '==>> 5. Return shuffled items: ',
