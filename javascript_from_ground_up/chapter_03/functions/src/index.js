@@ -9,9 +9,6 @@ function printFullName(arrayOfNames) {
   // Your code here
 }
 
-let names = ['Jonas', 'Rogers'];
-console.log('==>> 1. Your full name is: ', printFullName(names));
-
 /**
  * 2.
  * Make a function to print the first name and last name from an array of arrays
@@ -23,17 +20,6 @@ function printFullNameFromArrayOfArrays(arrayOfArrays) {
   // Your code here
 }
 
-let peopleNames = [
-  ['Jonas', 'Rogers'],
-  ['Mel', 'Gibson'],
-  ['Lucy', 'Liu'],
-  ['Edward', 'Scissorhands'],
-];
-console.log(
-  '==>> 2. Your full names are: ',
-  printFullNameFromArrayOfArrays(peopleNames)
-);
-
 /**
  * 3.
  * Make a function to count character in a string
@@ -44,10 +30,6 @@ console.log(
 function countSpecificCharacter(string, character) {
   // Your code here
 }
-console.log(
-  '==>> 3. count of `u` character in `Without functions, we fucked up!`  is: ',
-  countSpecificCharacter('Without functions, we fucked up!', 'u')
-);
 
 /**
  * 4.
@@ -59,10 +41,6 @@ console.log(
 function getRandomItemFromArray(arr) {
   // Your code here
 }
-console.log(
-  '==>> 4. Return random item is: ',
-  getRandomItemFromArray(['John', 'Doe', 3, 'Hello world!'])
-);
 
 /**
  * 5.
@@ -74,10 +52,82 @@ console.log(
 function shuffleMyArray(arr) {
   // Your code here
 }
-console.log(
-  '==>> 5. Return shuffled items: ',
-  shuffleMyArray([1, 2, 3, 4, 5, 6, 7, 8, 9])
-);
+
+/**
+ * 6.
+ * Reverse a number
+ * Input example: 123
+ * Output example: 321
+ */
+
+function reverseNum(num) {
+  return +num.toString().split('').reverse().join('');
+}
+
+/**
+ * 6.
+ * Count vowel letters
+ * Input example: The NEMESIS is Umbrella creation
+ * Output example: 321
+ */
+
+function countVowel(str) {
+  // One line solution
+  // return (str.match(/[aeiou]/gi) || []).length
+
+  // Multi line solution
+  var count = 0;
+  str = str.toLowerCase();
+  for (var i = 0; i < str.length; i++) {
+    if (
+      str.charAt(i) == 'a' ||
+      str.charAt(i) == 'e' ||
+      str.charAt(i) == 'i' ||
+      str.charAt(i) == 'o' ||
+      str.charAt(i) == 'u'
+    ) {
+      count++; //Increment vowel count
+    }
+  }
+  return count;
+}
+
+/**
+ * 7.
+ * Check Palindrome
+ * Input examples:
+ * - bannana
+ * - racecar
+ * - madam
+ * Output examples:
+ * - false
+ * - true
+ * - true
+ */
+
+function checkPalindrome(str) {
+  for (var i = 0; i < str.length; i++) {
+    if (str.charAt(i) != str.charAt(str.length - i - 1)) {
+      // Comparison fail
+      return false;
+    }
+  }
+  return true;
+}
+
+/**
+ * 8.
+ * Factorial
+ * Input examples: 5
+ * Output examples: 120
+ */
+
+function getFactorial(num) {
+  if (num === 1) return 1;
+  if (num === 0 || num < 0) return 0;
+
+  return num * getFactorial(num - 1);
+}
 
 // Do not touch this line
 module.exports = {
@@ -86,4 +136,8 @@ module.exports = {
   countSpecificCharacter,
   getRandomItemFromArray,
   shuffleMyArray,
+  reverseNum,
+  countVowel,
+  checkPalindrome,
+  getFactorial,
 };
