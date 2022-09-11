@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const port = 9000;
 module.exports = {
   entry: ['./src/index.js', './src/css/style.css'],
   output: {
@@ -17,7 +18,14 @@ module.exports = {
       logging: 'none',
     },
     compress: true,
-    port: 9000,
+    port,
+    setupMiddlewares: (middlewares) => {
+      setTimeout(() => {
+        console.log(`\n\nServer running at: http://localhost:${port}\n\n`);
+      }, 1000);
+
+      return middlewares;
+    },
   },
   mode: 'development',
   plugins: [
