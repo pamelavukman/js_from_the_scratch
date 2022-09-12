@@ -12,8 +12,8 @@ function printFullName(arrayOfNames) {
 /**
  * 2.
  * Make a function to print the first name and last name from an array of arrays
- * Input example:  [ ["Jonas", "Rogers"], ["John", "Doe"], ... ]
- * Output example: ["Jonas Rogers", "John Doe", ...]
+ * Input example:  [ ['Julia', 'Robert'], ['John', 'Doe'] ]
+ * Output example: ["Julia Robert", "John Doe"]
  */
 
 function printFullNameFromArrayOfArrays(arrayOfArrays) {
