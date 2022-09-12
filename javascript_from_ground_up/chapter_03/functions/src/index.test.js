@@ -15,7 +15,7 @@ describe('Functions tests', () => {
     const testSample = ['John', 'Doe'];
     console.log(`1. Testing sample is: `, JSON.stringify(testSample, null, 4));
 
-    expect(printFullName()).toEqual('John Doe');
+    expect(printFullName(testSample)).toEqual('John Doe');
   });
 
   test('2. printFullName should return ["Julia Robert", "John Doe", ...]', () => {
@@ -24,7 +24,7 @@ describe('Functions tests', () => {
       ['John', 'Doe'],
     ];
     console.log(`2. Testing sample is: `, JSON.stringify(testSample, null, 4));
-    expect(printFullNameFromArrayOfArrays()).toMatchObject([
+    expect(printFullNameFromArrayOfArrays(testSample)).toMatchObject([
       'Julia Robert',
       'John Doe',
     ]);
@@ -40,9 +40,9 @@ describe('Functions tests', () => {
   test('4. getRandomItemFromArray should return random item', () => {
     const testSample = ['John', 'Doe', '3', 'Hello world!', '5'];
     console.log(`4. Testing sample is: ${testSample}`);
-    expect(getRandomItemFromArray(testSample)).toMatch(
-      new RegExp(testSample.join('|'))
-    );
+    expect(
+      testSample.includes(getRandomItemFromArray(testSample))
+    ).toBeTruthy();
   });
 
   test('5. shuffleMyArray return shuffled array', () => {
