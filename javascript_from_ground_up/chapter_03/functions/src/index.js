@@ -117,7 +117,7 @@ function reverseNum(num) {
  * 6.
  * Count vowel letters
  * Input example: The NEMESIS is Umbrella creation
- * Output example: 321
+ * Output example: 12
  */
 
 function countVowel(str) {
