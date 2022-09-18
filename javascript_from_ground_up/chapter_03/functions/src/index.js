@@ -1,4 +1,5 @@
 import {decrypt, encrypt} from './encrypt-solutions';
+
 /**
  * 1.
  * Make a function to print the first name and last name from an array
