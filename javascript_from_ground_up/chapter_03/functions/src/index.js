@@ -26,16 +26,14 @@ function printFullName(arrayOfNames) {
  * Output example: ["Julia Robert", "John Doe"]
  */
 
+
+
+
 function printFullNameFromArrayOfArrays(arrayOfArrays) {
-  // console.log(
-  //   'printFullNameFromArrayOfArrays solution:\n\n',
-  //   decrypt({
-  //     iv: '2dd626156a469332c683b967b4db9e87',
-  //     content:
-  //       '425d7d7628e68469a88c2471f4f9dfd87d6d17163ae7481f36bfe7dfe9e536621e915067f8cb42d3',
-  //   })
-  // );
-  // Your code here
+  let joinedArray=arrayOfArrays.map(element =>{
+    return `${element[0]} ${element[1]}`
+  })
+  return joinedArray
 }
 
 /**
@@ -46,15 +44,17 @@ function printFullNameFromArrayOfArrays(arrayOfArrays) {
  */
 
 function countSpecificCharacter(string, character) {
-  // console.log(
-  //   'countSpecificCharacter solution:\n\n',
-  //   decrypt({
-  //     iv: '907a1d1d21061d02c72e3e159a7166a5',
-  //     content:
-  //       '7aeae1fbe05dd0da38495a9aaf16cdc02e776c1f14a35286a085f7e4e619015b3f2d58e6d28e75323dd21ce2c9696790884b0146d08bb9',
-  //   })
-  // );
-  // Your code here
+  let convertedArray=[...string]
+  let counter=0
+  console.log("Log my new array", convertedArray)
+  console.log("This is my charachter", character)
+  convertedArray.forEach(char=>{
+    if (character === char) counter++
+  })
+  console.log("I get this as result", counter)
+  return counter
+
+
 }
 
 /**
@@ -65,15 +65,9 @@ function countSpecificCharacter(string, character) {
  */
 
 function getRandomItemFromArray(arr) {
-  // console.log(
-  //   'getRandomItemFromArray solution:\n\n',
-  //   decrypt({
-  //     iv: 'ef73d56e70a7fb8b2f480f855e29fd2d',
-  //     content:
-  //       'f7d3afdad50e021264e0534c1fe13bd2319fb506bad6b5765c70a269f503fc967defd029cc29a6a449a0874f77ecad6bd80a3e',
-  //   })
-  // );
-  // Your code here
+  let randomNumber=Math.floor(Math.random()*5)
+  console.log("My array length",arr.length)
+  return arr[randomNumber]
 }
 
 /**
@@ -84,15 +78,12 @@ function getRandomItemFromArray(arr) {
  */
 
 function shuffleMyArray(arr) {
-  // console.log(
-  //   'shuffleMyArray solution:\n\n',
-  //   decrypt({
-  //     iv: 'cf3daeb86a2234ef3368b417824221f3',
-  //     content:
-  //       '888f5f1fceca443133df56a15ed9128bb292f072c18706be60cff89853cc777cf00d8f012aead8e852c266',
-  //   })
-  // );
-  // Your code here
+  console.log("This I get from my parameter", arr)
+  arr.forEach((element,index) => {
+    let randomIndex=Math.floor(Math.random()*arr.length)
+    arr.splice(arr[index],0,arr[randomIndex])
+  })
+  return arr
 }
 
 /**
@@ -103,47 +94,40 @@ function shuffleMyArray(arr) {
  */
 
 function reverseNum(num) {
-  // console.log(
-  //   'reverseNum solution:\n\n',
-  //   decrypt({
-  //     iv: '61469ee31964cbe0f3897bfc1c742ae7',
-  //     content:
-  //       '89f7a45dbd54f4eb97deccb9ee664d8c33c5fc1a7d98575f71fbf200e2bba71e8cf0e917662c369f14e86ed9d272934078af6e15',
-  //   })
-  // );
-  // Your code here
+  return Number( (""+num).split("").reverse().join(""));
+  
+  
+  // console.log("I reversed this to string", typeof convertToString)
+  // return convertToString
+  // let array = convertToString.split('')
+  // console.log('My converted string to array',array)
+  // let array1 = array.reverse()
+  // console.log('This I get to reverse my array',array1)
+  // let myString = array1.join('')
+  // console.log('This I get as result',myString)
+  //return Number(myString)
+
 }
 
 /**
- * 6.
+ * 7.
  * Count vowel letters
  * Input example: The NEMESIS is Umbrella creation
  * Output example: 12
  */
 
 function countVowel(str) {
-  // One line solution
-  // console.log(
-  //   'countVowel solution:\n\n',
-  //   decrypt({
-  //     iv: '98d47ba4e89ddb64dae2e4886440ca11',
-  //     content:
-  //       '7dc7ca54abc88c98cf4775d00a75810d015164932cccb228a5192706c30c95755a4d6e37b0dbd70db10e9522',
-  //   })
-  // );
-  // Multi line solution
-  // console.log(
-  //   'countVowel solution:\n\n',
-  //   decrypt({
-  //     iv: 'd86fef560984cdb43d5e6e00a23b33e4',
-  //     content:
-  //       '73ba9473fe3954108f167025fa82f6d90aa4956d7f02189dda74796a79e9c5b737183112a1e20eabfc1cc68f3fef54bbdd93eebcc837b1bf5d233ea3846dd7bf61dc6c1f7c790a629443961fa377fc8fe181c56dde5a61be87ac73f733f61d99e0f4a12822be63ca8f18f54b5332890a9cdf5c9ad111abab19f7f4c386bbf3afe7a9ea639c5ade80099eb3c9d31e546448f9630abd684e2fba43236f41927b8ad6183411a9d2f1bfe96feca442754b30457cf5ac923b03f766a1dce9db40a722d1d970cd47a6a67f54d74a4694eca88af8c2e10cd22622e59ab16981830a4b1d47e9629383934683a8ae5319f383187cbc94a51462373968bb3b27defe02cbd73d22f0db09e9c4576d97656e1366a79727f808ccf421324c93a0d33927da6a78274f5dcd778375fd4543fcf938588da9e45316949b9d196e1f15c5a5dc',
-  //   })
-  // );
+
+  let counter = 0
+  let convertToArray=str.toLowerCase().split('')
+  convertToArray.map(item=>{
+  if(item === 'a' || item === 'e' || item === 'i' || item === 'o' || item === 'u') counter++
+})
+return counter
 }
 
 /**
- * 7.
+ * 8.
  * Check Palindrome
  * Input examples:
  * - bannana
@@ -156,34 +140,29 @@ function countVowel(str) {
  */
 
 function checkPalindrome(str) {
-  // console.log(
-  //   'checkPalindrome solution:\n\n',
-  //   decrypt({
-  //     iv: 'eb071b551b4d02edc8e9c776713cf120',
-  //     content:
-  //       '300d21be5c1140d358c347206f2d2d06d6a5e1b285ff6cbc41ffa0f506e0ca7d081b853c622b5f0adbd089e140ebdb42d4d6ea5446feac98097b7c3da5b6bf48ffaceb178ce831b4b2ede047c77f76c2c169f240f0bee932dd67a597ff579e353605b43951c45755b449a9d359a00c1952ab844350983bc86b390f3e52f5465b69cdefe89a7293173e699153abbfa06c8f36caf62ea9b3a373f5755485774e7ccd35c3966d265697aab6964db5cb0961f45502d7e14688e4fe140dd8fb',
-  //   })
-  // );
-  // Your code here
+  let myConvertedArray=str.split("")
+  console.log("After I did split I get this", myConvertedArray)
+  let myReversedArray=myConvertedArray.reverse()
+  console.log("I should see reversed array",myReversedArray )
+ let myResult= myReversedArray.join("")
+ return str === myResult
 }
 
 /**
- * 8.
+ * 9.
  * Factorial
  * Input examples: 5
  * Output examples: 120
  */
 
 function getFactorial(num) {
-  // console.log(
-  //   'checkPalindrome solution:\n\n',
-  //   decrypt({
-  //     iv: '72a3903aaa1d6cd9eb3a0f6bf0f1dd3c',
-  //     content:
-  //       '630061a076f39fa7cd8a2f58922528c5d9c8f436bc9fe1d189805a1e91473b544c01beea4b5d536f06e729bb30e2671a4c760e1b3711d661f7ab317e1e515a0ed46c80c283842ee545789364e16dfd24c0c06f874f97c6fbf60aa18c546361f4b4e637b293986f7cb1a106',
-  //   })
-  // );
-  // Your code here
+  if (num ===0 ||num ===1) return 1
+  if (num <0) return 0
+  let factorial=1
+  for (let i=num;i>=1;i--) {
+    factorial *=i
+  }
+  return factorial
 }
 
 // Do not touch this line

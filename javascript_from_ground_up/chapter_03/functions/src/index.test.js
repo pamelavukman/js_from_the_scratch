@@ -85,7 +85,7 @@ describe('Functions tests', () => {
     }
   });
 
-  test('9. factorial of 5 is equal 120', () => {
+  test.only('9. factorial of 5 is equal 120', () => {
     const testSample = 5;
     console.log(`9. Testing sample is: 5`);
 
