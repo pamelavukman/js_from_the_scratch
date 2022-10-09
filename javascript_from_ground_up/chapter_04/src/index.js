@@ -64,7 +64,27 @@ const catsApi = [
   },
 ];
 
-// Write your code here
+//Function which loops through API and gets all id's
+// let collectionOfIds=[]
+// let collectionOfUrl=[]
+// for ( let i=0;i<catsApi.length;i++) {
+//   collectionOfIds=catsApi[i].id
+//   collectionOfUrl=catsApi[i].url
+//   console.log("I get this", collectionOfIds, collectionOfUrl)
+// }
+let  tableStart = `<table>`
+let tableEnd = `</table>`
+catsApi.forEach((details)=>{
+
+
+  tableStart += `<tr> <td>${details.id}</td>  <td>${details.url}</td> <td><img src="${details.url}" width="70px"></td></tr>`
+})
+tableStart += tableEnd
+
+console.log("What is in my new list", tableStart)
+
+document.querySelector('.container').innerHTML= tableStart
+
 
 // Solution is
 // console.log(decrypt({
